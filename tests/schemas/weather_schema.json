@@ -1,0 +1,17 @@
+{
+    "type": "object",
+    "properties": {
+        "coord": { "type": "object" },
+        "weather": { "type": "array" },
+        "main": {
+            "type": "object",
+            "properties": {
+                "temp": { "type": "number" },
+                "humidity": { "type": "number" }
+            },
+            "required": ["temp", "humidity"]
+        },
+        "name": { "type": "string" }
+    },
+    "required": ["coord", "weather", "main", "name"]
+}

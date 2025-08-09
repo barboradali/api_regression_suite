@@ -1,0 +1,13 @@
+[
+  { "name": "Weather - London", "method": "GET", "endpoint": "/weather?q=London&appid=0bc9df7de18b7ed2aed04c391cfdd00b&units=metric", "expected_status": 200, "schema": "weather_schema.json" },
+
+  { "name": "Weather - New York", "method": "GET", "endpoint": "/weather?q=New York&appid=0bc9df7de18b7ed2aed04c391cfdd00b&units=metric", "expected_status": 200, "schema": "weather_schema.json" },
+
+  { "name": "Weather - Invalid City", "method": "GET", "endpoint": "/weather?q=ThisCityDoesNotExist&appid=0bc9df7de18b7ed2aed04c391cfdd00b&units=metric", "expected_status": 404, "schema": "error_schema.json" },
+
+  { "name": "XPASS demo - Tokyo still works", "method": "GET", "endpoint": "/weather?q=Tokyo&appid=0bc9df7de18b7ed2aed04c391cfdd00b&units=metric", "expected_status": 200, "schema": "weather_schema.json", "mark": "xfail", "reason": "Known issue (expected to fail) but might pass" },
+
+  { "name": "XFAIL demo - nonsense city", "method": "GET", "endpoint": "/weather?q=DefinitelyNotACity&appid=0bc9df7de18b7ed2aed04c391cfdd00b&units=metric", "expected_status": 200, "schema": "weather_schema.json", "mark": "xfail", "reason": "Bug: 200 expected but API returns 404" },
+
+  { "name": "SKIP demo - city under maintenance", "method": "GET", "endpoint": "/weather?q=Sydney&appid=0bc9df7de18b7ed2aed04c391cfdd00b&units=metric", "expected_status": 200, "schema": "weather_schema.json", "mark": "skip", "reason": "Upstream outage. Skipping for now." }
+]
