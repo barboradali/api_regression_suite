@@ -1,5 +1,4 @@
 name: API Regression Suite CI
-
 on:
   push:
     branches: [ main ]
